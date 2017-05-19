@@ -37,13 +37,13 @@
     </a-entity>
 
     <!-- add planets -->
-  <a-entity position="-100 100 100">
-    <a-sphere radius="50" position='0 40 0' color='yellow'>
+  <a-entity position="-500 500 500">
+    <a-sphere radius="50" position='0 0 0' color='yellow'>
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
     </a-sphere>
       
     <a-entity>
-        <a-sphere radius="10" position='30 40 30' material='src: #moon;'>
+        <a-sphere radius="10" position='100 0 100' material='src: #moon;'>
             <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
@@ -53,10 +53,10 @@
                to="0 360 0"
                repeat="indefinite"></a-animation>
     </a-entity>
-    <a-ring color="white" radius-inner="40" radius-outer="40.1" position="0 40 0" rotation="90 0 0"></a-ring>
+    <a-ring color="white" radius-inner="100" radius-outer="100.1" position="0 0 0" rotation="90 0 0"></a-ring>
     
     <a-entity>
-        <a-sphere radius="8" position='-100 40 0' material='src: #moon;'>
+        <a-sphere radius="8" position='-200 0 0' material='src: #moon;'>
             <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
@@ -66,10 +66,10 @@
                to="0 360 0"
                repeat="indefinite"></a-animation>
     </a-entity>
-    <a-ring color="white" radius-inner="108" radius-outer="108.1" position="0 40 0" rotation="90 0 0"></a-ring>
+    <a-ring color="white" radius-inner="208" radius-outer="208.1" position="0 0 0" rotation="90 0 0"></a-ring>
     
     <a-entity>
-        <a-sphere radius="13" position='200 40 -200' material='src: #moon;'>
+        <a-sphere radius="13" position='500 0 -500' material='src: #moon;'>
             <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
@@ -79,7 +79,7 @@
                to="0 360 0"
                repeat="indefinite"></a-animation>
     </a-entity>
-    <a-ring color="white" radius-inner="213" radius-outer="213.1" position="0 40 0" rotation="90 0 0"></a-ring>
+    <a-ring color="white" radius-inner="513" radius-outer="513.1" position="0 0 0" rotation="90 0 0"></a-ring>
   </a-entity>
     
 </a-scene>
