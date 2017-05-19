@@ -48,8 +48,10 @@
                to="0 360 0"
                repeat="indefinite"></a-animation>
     </a-entity>
+    <a-ring color="white" radius-inner="29" radius-outer="31" position="0 40 0"></a-ring>
+    
     <a-entity>
-        <a-sphere radius="8" position='50 40 50' material='src: #moon;'>
+        <a-sphere radius="8" position='-50 40 0' material='src: #moon;'>
             <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
@@ -59,8 +61,9 @@
                to="0 360 0"
                repeat="indefinite"></a-animation>
     </a-entity>
+    
     <a-entity>
-        <a-sphere radius="13" position='-100 40 100' material='src: #moon;'>
+        <a-sphere radius="13" position='100 40 -100' material='src: #moon;'>
             <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
