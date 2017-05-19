@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+</head>
+<body>
+<!-- set up the scene -->
+<a-scene altspace='fullspace: true'>
+    <a-entity n-object="res:objects/target archery" position="0 7 0" rotation="30 0 0">
+       <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+    </a-entity>
+</a-scene>
+</body></html>
