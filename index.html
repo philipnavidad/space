@@ -15,10 +15,10 @@
     </a-assets>
 
     <!-- add the moon to the scene -->
-    <a-sphere scale='2 2 2' position='0 10 0' material='src: #moon;'>
+    <!-- <a-sphere scale='2 2 2' position='0 10 0' material='src: #moon;'> -->
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
-    </a-sphere>
+        <!-- <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/> -->
+    <!-- </a-sphere> -->
 
     <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'>
@@ -38,8 +38,8 @@
 
     <!-- add planets -->
     <a-entity>
-        <a-sphere position='5 10 5' material='src: #moon;'>
-            <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+        <a-sphere radius="10" position='10 20 10' material='src: #moon;'>
+            <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
                dur="10000"
@@ -49,8 +49,8 @@
                repeat="indefinite"></a-animation>
     </a-entity>
     <a-entity>
-        <a-sphere position='10 10 10' material='src: #moon;'>
-            <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+        <a-sphere radius="8" position='20 20 20' material='src: #moon;'>
+            <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
                dur="15000"
@@ -60,8 +60,8 @@
                repeat="indefinite"></a-animation>
     </a-entity>
     <a-entity>
-        <a-sphere position='-15 10 15' material='src: #moon;'>
-            <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+        <a-sphere radius="13" position='-30 20 30' material='src: #moon;'>
+            <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
         </a-sphere>
         <a-animation attribute="rotation"
                dur="20000"
