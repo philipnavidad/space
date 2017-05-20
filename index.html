@@ -37,8 +37,10 @@
     </a-entity>
 
     <!-- add planets -->
-  <a-entity position="-500 500 500">
-    <a-sphere radius="50" position='0 0 0' color='yellow'>
+  <a-entity position="-500 500 500" id="sun" sync="own-on: toggle" sync-transform>
+  <a-animation attribute="position" begin="toggle" dur="1000" from="-500 500 500" to="0 100 0" direction="alternate" repeat="0"></a-animation>    
+     
+    <a-sphere radius="50" position='0 0 0' color='yellow' wire="on: click; emit: toggle; targets: #sun">
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
     </a-sphere>
       
@@ -81,6 +83,12 @@
     </a-entity>
     <a-ring color="white" radius-inner="500" radius-outer="500.1" position="0 0 0" rotation="90 0 0"></a-ring>
   </a-entity>
+
+ <!-- animations -->
+     <a-entity id="sun" sync="own-on: toggle" sync-transform>
+      <a-animation attribute="position" begin="toggle" dur="1000" from="0 -5 7" to="0 0.55 7" direction="alternate" repeat="0"></a-animation>
+     </a-entity>
+    
     
 </a-scene>
 </body></html>
