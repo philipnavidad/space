@@ -25,9 +25,22 @@
     <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'></a-sky>
 
+    <!-- add cockpit controls -->
+    
+    <a-entity
+		id="fly"  
+		position="-0.5 0.5 -0.5"
+		scale="0.1 0.1 0.1"
+		rotation="0 0 0"
+		geometry="primitive: box" material="color: green"
+		n-cockpit-parent altspace-cursor-collider="enabled: true"
+		wire="on: click; emit: toggle; target: #system"
+		sync="own-on: toggle" sync-transform>
+	</a-entity>
+    
     <!-- add planets -->
-    <a-entity position="200 200 -200" id="sun" sync="own-on: toggle" sync-transform>
-    <a-animation attribute="position" begin="toggle" dur="1000" from="-500 500 500" to="0 100 0" direction="alternate" repeat="0"></a-animation>    
+    <a-entity id="system" position="200 200 -200" id="sun" sync="own-on: toggle" sync-transform>
+    <a-animation attribute="position" begin="toggle" dur="10000" from="200 200 -200" to="0 10 0" direction="alternate" repeat="0"></a-animation>    
      
         <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0' wire="on: click; emit: toggle; targets: #sun">
             <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
