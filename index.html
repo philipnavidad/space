@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+</head>
+<body>
+<!-- set up the scene -->
+<a-scene altspace='fullspace: true'>
+
+    <!-- preload all our textures -->
+    <a-assets>
+        <img id='moon' src='resources/moon.jpg'/>
+        <img id='stars' src='resources/space.png'/>
+        <img id='sun' src='resources/moon.jpg'/>
+        <img id='b' src='resources/b.png'/>
+        <img id='c' src='resources/c.png'/> 
+        <img id='d' src='resources/d.png'/>
+        <img id='e' src='resources/e.png'/>
+        <img id='f' src='resources/f.png'/>
+        <img id='g' src='resources/g.png'/>
+        <img id='h' src='resources/h.png'/>
+    </a-assets>
+
+    <!-- add the backdrop of stars -->
+    <a-sky src='#stars' radius='2500'>
+        <a-animation to='360 360 0' easing='linear' dur='2000000' repeat='indefinite'/>
+    </a-sky>
+
+    <!-- add planets -->
+    <a-entity position="-500 500 500" id="sun" sync="own-on: toggle" sync-transform>
+    <a-animation attribute="position" begin="toggle" dur="1000" from="-500 500 500" to="0 100 0" direction="alternate" repeat="0"></a-animation>    
+     
+        <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="color: red" position='0 0 0' wire="on: click; emit: toggle; targets: #sun">
+            <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            <a-animation attribute="position" begin="toggle" dur="1000" from="-500 500 500" to="0 100 0" direction="alternate" repeat="0"></a-animation>
+        </a-entity>
+
+        <a-entity>
+            <a-sphere radius="10" position='100 0 0' material='src: #b;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="100000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="100" radius-outer="100.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="8" position='-200 0 0' material='src: #c;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="150000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="200" radius-outer="200.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='300 0 0' material='src: #d;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="300" radius-outer="300.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="10" position='400 0 0' material='src: #e;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="100000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="400" radius-outer="400.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="8" position='-500 0 0' material='src: #f;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="150000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="500" radius-outer="500.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='600 0 0' material='src: #g;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="600" radius-outer="600.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='700 0 0' material='src: #h;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="white" radius-inner="700" radius-outer="700.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+    </a-entity>
+
+ <!-- animations -->
+     <a-entity id="sun" sync="own-on: toggle" sync-transform>
+      <a-animation attribute="position" begin="toggle" dur="1000" from="0 -5 7" to="0 0.55 7" direction="alternate" repeat="0"></a-animation>
+     </a-entity>
+    
+    
+</a-scene>
+</body></html>
