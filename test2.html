@@ -160,9 +160,9 @@
     </a-entity>
 	
 	<!-- planet animation -->
-	<a-entity id="planet" sync="own-on: 1b" sync-transform>
+	<a-entity id="planet" sync="own-on: 1b" scale="0.001 0.001 0.001" sync-transform>
 		<a-animation attribute="scale" begin="1b" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
-		<a-sphere radius="10" scale="0.001 0.001 0.001" position="0 20 -5" material='src: #b;'>
+		<a-sphere radius="10" position="0 20 -5" material='src: #b;'>
 			<a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
 		</a-sphere>
 	</a-entity>	
