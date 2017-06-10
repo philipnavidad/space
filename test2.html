@@ -159,6 +159,14 @@
         <a-ring color="gray" segments-theta="64" radius-inner="700" radius-outer="700.1" position="0 0 0" rotation="90 0 0"></a-ring>
     </a-entity>
 
+	<!-- planet animation -->
+    <a-entity id="planet" sync="own-on: toggle" sync-transform>
+		<a-sphere radius="10" position="0 20 -5" scale="0.0001 0.0001 0.0001" material='src: #b;'>
+			<a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+		</a-sphere>
+		<a-animation attribute="scale" begin="1b" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+	</a-entity>	
+
 </a-scene>
 </body>
 </html>
