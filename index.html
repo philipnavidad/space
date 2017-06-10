@@ -44,7 +44,7 @@
 		rotation="-45 0 0"
 		geometry="primitive: circle" material="color: yellow"
 		n-cockpit-parent altspace-cursor-collider="enabled: true"
-		wire="on: click; emit: 1b; targets: #system,#1b"
+		wire="on: click; emit: 1b; targets: #system, #1btarget"
 		sync="own-on: 1b" sync-transform>
 	</a-entity>
 	
@@ -165,7 +165,7 @@
     </a-entity>
 
  <!-- planet animation -->
-      <a-entity id="1b">
+      <a-entity id="1btarget">
             <a-sphere radius="10" scale="0.0001 0.0001 0.0001" position='0 20 -5' material='src: #b;'>
                 <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
             </a-sphere>
