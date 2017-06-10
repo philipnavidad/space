@@ -37,6 +37,10 @@
 		wire="on: click; emit: toggle; target: #system"
 		sync sync-transform>
 	</a-entity>
+	<a-text 
+		value="hello world"
+		position="-0.15 0.6 0.02">
+	</a-text>
 	
 	<a-entity
 		id="1b"  
@@ -47,8 +51,12 @@
 		wire="on: click; emit: 1b; targets: #system, #planet"
 		sync sync-transform>
 	</a-entity>
-	
 	<a-entity
+		n-text="fontSize: 2; text: Trappist 1b"
+		position="-0.15 0.45 0.02">
+	</a-entity>
+	
+    	<a-entity
 		id="fly"  
 		position="-0.3 0.3 0.02"
 		scale="0.1 0.1 0.02"
