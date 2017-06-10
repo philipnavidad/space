@@ -26,68 +26,86 @@
     <!-- add cockpit controls -->
     <a-entity position="3 4 10"> 
 	
-	<a-plane color="white" width="1" height="1.6" opacity="0.05"></a-plane>
+		<a-plane color="white" width="1" height="1.6" opacity="0.05"></a-plane>
+
+		<a-entity
+			id="toggle"  
+			position="-0.3 0.6 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: green"
+			wire="on: click; emit: toggle; target: #system"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
+			position="1.3 0.6 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
+		<a-entity
+			id="1b"  
+			position="-0.3 0.45 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1b; targets: #system, #planet"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1b; horizontalAlign: left"
+			position="1.3 0.45 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
+		<a-entity
+			id="fly"  
+			position="-0.3 0.3 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: fly; target: #system"
+			sync sync-transform>
+		</a-entity>
+			<a-entity
+			n-text="fontSize: 2; text: Fly Away; horizontalAlign: left"
+			position="1.3 0.3 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
+		<a-entity
+			id="music"  
+			position="-0.3 0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: purple"
+			wire="on: click; emit: intro; target: #intro"
+			n-sound="src: resources/intro.wav; volume: 1; oneshot: true; on: click"
+			altspace-cursor-collider="enabled: true"
+			sync sync-n-sound>
+		</a-entity>
+			<a-entity
+			n-text="fontSize: 2; text: Intro; horizontalAlign: left"
+			position="1.3 0.15 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
 		
-	<a-entity
-		id="toggle"  
-		position="-0.3 0.6 0.02"
-		scale="0.1 0.1 0.02"
-		rotation="0 0 0"
-		geometry="primitive: box" material="color: green"
-		wire="on: click; emit: toggle; target: #system"
-		sync sync-transform>
-	</a-entity>
-	<a-entity
-		n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
-		position="1.3 0.6 0.02"
-	  	scale="0.3 0.3 0.3">
-	</a-entity>
-	
-	<a-entity
-		id="1b"  
-		position="-0.3 0.45 0.02"
-		scale="0.1 0.1 0.02"
-		rotation="0 0 0"
-		geometry="primitive: box" material="color: yellow"
-		wire="on: click; emit: 1b; targets: #system, #planet"
-		sync sync-transform>
-	</a-entity>
-	<a-entity
-		n-text="fontSize: 2; text: Trappist 1b; horizontalAlign: left"
-		position="1.3 0.45 0.02"
-	  	scale="0.3 0.3 0.3">
-	</a-entity>
-	
-    	<a-entity
-		id="fly"  
-		position="-0.3 0.3 0.02"
-		scale="0.1 0.1 0.02"
-		rotation="0 0 0"
-		geometry="primitive: box" material="color: red"
-		wire="on: click; emit: fly; target: #system"
-		sync sync-transform>
-	</a-entity>
-    	<a-entity
-		n-text="fontSize: 2; text: Fly Away; horizontalAlign: left"
-		position="1.3 0.3 0.02"
-	  	scale="0.3 0.3 0.3">
-	</a-entity>
-	    
-    	<a-entity
-		id="intro"  
-		position="-0.3 0.15 0.02"
-		scale="0.1 0.1 0.02"
-		rotation="0 0 0"
-		geometry="primitive: box" material="color: purple"
-		n-sound="src: resources/intro.wav; volume: 1; oneshot: true; on: click"
-		altspace-cursor-collider="enabled: true"
-		sync sync-n-sound>
-	</a-entity>
-    	<a-entity
-		n-text="fontSize: 2; text: Intro Music; horizontalAlign: left"
-		position="1.3 0.15 0.02"
-	  	scale="0.3 0.3 0.3">
-	</a-entity>
+		<a-entity
+			id="hide"  
+			position="-0.3 0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: purple"
+			wire="on: click; emit: hide; target: #intro"
+			n-sound="src: resources/intro.wav; volume: 1; oneshot: true; on: click"
+			altspace-cursor-collider="enabled: true"
+			sync sync-n-sound>
+		</a-entity>
+			<a-entity
+			n-text="fontSize: 2; text: Hide; horizontalAlign: left"
+			position="1.3 0 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
     </a-entity>
 
     <!-- add planets -->
@@ -208,6 +226,107 @@
 		</a-entity>
 	</a-entity>	
 
+	<!-- intro -->
+    <a-entity id="intro" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
+		<a-animation attribute="position" easing="linear" begin="intro" dur="20000" from="200 200 -200" to="-100 0 -50" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" easing="linear" begin="intro" dur="20000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+	    <a-animation attribute="scale" easing="linear" begin="hide" dur="100" from="1 1 1" to="0.0001 0.0001 0.0001" direction="alternate" repeat="0"></a-animation>
+		
+        <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0' wire="on: click; emit: toggle; targets: #sun">
+            <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+        </a-entity>
+
+        <a-entity>
+            <a-sphere radius="10" position='100 0 0' material='src: #b;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="100000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="100" radius-outer="100.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="8" position='-200 0 0' material='src: #c;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="150000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="200" radius-outer="200.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='0 0 300' material='src: #d;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="300" radius-outer="300.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="10" position='0 0 -400' material='src: #e;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="100000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="400" radius-outer="400.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="8" position='500 0 0' material='src: #f;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="150000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="500" radius-outer="500.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='-600 0 0' material='src: #g;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="600" radius-outer="600.1" position="0 0 0" rotation="90 0 0"></a-ring>
+
+        <a-entity>
+            <a-sphere radius="13" position='0 0 700' material='src: #h;'>
+                <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+            </a-sphere>
+            <a-animation attribute="rotation"
+                    dur="200000"
+                    fill="forwards"
+                    easing="linear"
+                    to="0 360 0"
+                    repeat="indefinite"></a-animation>
+        </a-entity>
+        <a-ring color="gray" segments-theta="64" radius-inner="700" radius-outer="700.1" position="0 0 0" rotation="90 0 0"></a-ring>
+    </a-entity>
 </a-scene>
 </body>
 </html>
