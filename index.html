@@ -24,11 +24,11 @@
     </a-assets>
     
     <!-- add cockpit controls -->
-    <a-entity position="3 5 9"> 
+    <a-entity position="3 5 10"> 
 	<a-entity
 		id="fly"  
 		position="0.5 0 -1.1"
-		scale="0.1 0.1 0.1"
+		scale="0.1 0.1 0.02"
 		rotation="0 0 0"
 		geometry="primitive: box" material="color: green"
 		wire="on: click; emit: fly; target: #system"
@@ -38,10 +38,9 @@
 	<a-entity
 		id="1b"  
 		position="0.8 0 -1.1"
-		scale="0.1 0.1 0.1"
+		scale="0.1 0.1 0.02"
 		rotation="0 0 0"
 		geometry="primitive: box" material="color: yellow"
-		n-cockpit-parent altspace-cursor-collider="enabled: true"
 		wire="on: click; emit: 1b; targets: #system, #planet"
 		sync sync-transform>
 	</a-entity>
@@ -49,10 +48,9 @@
 	<a-entity
 		id="hide"  
 		position="1.1 0 -1.1"
-		scale="0.1 0.1 0.1"
+		scale="0.1 0.1 0.02"
 		rotation="0 0 0"
 		geometry="primitive: box" material="color: red"
-		n-cockpit-parent altspace-cursor-collider="enabled: true"
 		wire="on: click; emit: hide; target: #system"
 		sync sync-transform>
 	</a-entity>
