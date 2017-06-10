@@ -22,6 +22,40 @@
         <img id='g' src='resources/g.png'/>
         <img id='h' src='resources/h.jpg'/>
     </a-assets>
+    
+    <!-- add cockpit controls -->
+    <a-entity
+		id="fly"  
+		position="0.5 -0.4 -1.1"
+		scale="0.05 0.05 0.05"
+		rotation="-45 0 0"
+		geometry="primitive: circle" material="color: green"
+		n-cockpit-parent altspace-cursor-collider="enabled: true"
+		wire="on: click; emit: toggle; target: #system"
+		sync="own-on: toggle" sync-transform>
+	</a-entity>
+	
+	<a-entity
+		id="1b"  
+		position="0.65 -0.4 -1.1"
+		scale="0.05 0.05 0.05"
+		rotation="-45 0 0"
+		geometry="primitive: circle" material="color: yellow"
+		n-cockpit-parent altspace-cursor-collider="enabled: true"
+		wire="on: click; emit: 1b; targets: #system, #1btarget"
+		sync="own-on: 1b" sync-transform>
+	</a-entity>
+	
+	<a-entity
+		id="hide"  
+		position="0.8 -0.4 -1.1"
+		scale="0.05 0.05 0.05"
+		rotation="-45 0 0"
+		geometry="primitive: circle" material="color: red"
+		n-cockpit-parent altspace-cursor-collider="enabled: true"
+		wire="on: click; emit: hide; target: #system"
+		sync="own-on: hide" sync-transform>
+	</a-entity>
 
     <!-- add planets -->
     <a-entity id="system" position="200 200 -200" sync="own-on: toggle" sync-transform>
