@@ -183,7 +183,13 @@
 		<a-sphere radius="5" material='src: #b;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
-		<a-text value="hello world" position="0 -10 0"></a-text>
+		<a-entity>
+			<a-plane color="black" width="4" height="3" opacity="0.2" position="0 -8 0"></a-plane>
+			<a-entity
+				n-text="fontSize: 2; text: Trappist 1b; horizontalAlign: left"
+				position="0 0 0">
+			</a-entity>
+		</a-entity>
 	</a-entity>	
 
 </a-scene>
