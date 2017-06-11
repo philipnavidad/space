@@ -227,8 +227,8 @@
 
 	<!-- intro -->
     <a-entity id="intro" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="position" easing="linear" begin="intro" dur="40000" from="200 200 -200" to="-200 -50 -50" direction="normal" repeat="0"></a-animation>
-		<a-animation attribute="scale" easing="linear" begin="intro" dur="40000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="position" easing="linear" begin="intro" dur="30000" from="200 200 -200" to="-200 -50 -50" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" easing="linear" begin="intro" dur="30000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="normal" repeat="0"></a-animation>
 	    <a-animation attribute="scale" easing="linear" begin="hide" dur="100" from="1 1 1" to="0.0001 0.0001 0.0001" direction="alternate" repeat="0"></a-animation>
 		
         <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0' wire="on: click; emit: toggle; targets: #sun">
@@ -246,6 +246,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="100" radius-outer="100.1" position="0 0 0" rotation="90 0 0"></a-ring>
         
         <a-entity>
             <a-sphere radius="8" position='-200 0 0' material='src: #c;'>
@@ -258,6 +259,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="200" radius-outer="200.1" position="0 0 0" rotation="90 0 0"></a-ring>
         
         <a-entity>
             <a-sphere radius="13" position='0 0 300' material='src: #d;'>
@@ -270,6 +272,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="300" radius-outer="300.1" position="0 0 0" rotation="90 0 0"></a-ring>
         
         <a-entity>
             <a-sphere radius="10" position='0 0 -400' material='src: #e;'>
@@ -282,6 +285,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="400" radius-outer="400.1" position="0 0 0" rotation="90 0 0"></a-ring>
        
         <a-entity>
             <a-sphere radius="8" position='500 0 0' material='src: #f;'>
@@ -294,6 +298,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="500" radius-outer="500.1" position="0 0 0" rotation="90 0 0"></a-ring>
         
         <a-entity>
             <a-sphere radius="13" position='-600 0 0' material='src: #g;'>
@@ -306,6 +311,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="600" radius-outer="600.1" position="0 0 0" rotation="90 0 0"></a-ring>
         
         <a-entity>
             <a-sphere radius="13" position='0 0 700' material='src: #h;'>
@@ -318,6 +324,7 @@
                     to="0 360 0"
                     repeat="indefinite"></a-animation>
         </a-entity>
+    	<a-ring color="gray" segments-theta="64" radius-inner="700" radius-outer="700.1" position="0 0 0" rotation="90 0 0"></a-ring>
 	</a-entity>
 </a-scene>
 </body>
