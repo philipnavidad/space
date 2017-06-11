@@ -29,53 +29,8 @@
 		<a-plane color="white" width="1" height="1.6" opacity="0.05"></a-plane>
 
 		<a-entity
-			id="toggle"  
-			position="-0.3 0.6 0.02"
-			scale="0.1 0.1 0.02"
-			rotation="0 0 0"
-			geometry="primitive: box" material="color: green"
-			wire="on: click; emit: toggle; target: #system"
-			sync sync-transform>
-		</a-entity>
-		<a-entity
-			n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
-			position="1.3 0.6 0.02"
-			scale="0.3 0.3 0.3">
-		</a-entity>
-
-		<a-entity
-			id="1b"  
-			position="-0.3 0.45 0.02"
-			scale="0.1 0.1 0.02"
-			rotation="0 0 0"
-			geometry="primitive: box" material="color: yellow"
-			wire="on: click; emit: 1b; targets: #planet"
-			sync sync-transform>
-		</a-entity>
-		<a-entity
-			n-text="fontSize: 2; text: Trappist 1b; horizontalAlign: left"
-			position="1.3 0.45 0.02"
-			scale="0.3 0.3 0.3">
-		</a-entity>
-
-		<a-entity
-			id="fly"  
-			position="-0.3 0.3 0.02"
-			scale="0.1 0.1 0.02"
-			rotation="0 0 0"
-			geometry="primitive: box" material="color: red"
-			wire="on: click; emit: fly; target: #system"
-			sync sync-transform>
-		</a-entity>
-			<a-entity
-			n-text="fontSize: 2; text: Fly Away; horizontalAlign: left"
-			position="1.3 0.3 0.02"
-			scale="0.3 0.3 0.3">
-		</a-entity>
-
-		<a-entity
 			id="music"  
-			position="-0.3 0.15 0.02"
+			position="-0.3 0.6 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
 			geometry="primitive: box" material="color: purple"
@@ -84,15 +39,15 @@
 			altspace-cursor-collider="enabled: true"
 			sync sync-n-sound>
 		</a-entity>
-			<a-entity
+		<a-entity
 			n-text="fontSize: 2; text: Intro; horizontalAlign: left"
-			position="1.3 0.15 0.02"
+			position="1.3 0.6 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
 		
 		<a-entity
 			id="hide"  
-			position="-0.3 0 0.02"
+			position="-0.3 0.45 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
 			geometry="primitive: box" material="color: purple"
@@ -100,11 +55,117 @@
 			altspace-cursor-collider="enabled: true"
 			sync sync-n-sound>
 		</a-entity>
-			<a-entity
+		<a-entity
 			n-text="fontSize: 2; text: Hide; horizontalAlign: left"
+			position="1.3 0.45 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+		
+		<a-entity
+			id="toggle"  
+			position="-0.3 0.3 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: green"
+			wire="on: click; emit: toggle; target: #system"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
+			position="1.3 0.3 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
+		<a-entity
+			id="1b"  
+			position="-0.3 0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1b; targets: #planetb"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1b; horizontalAlign: left"
+			position="1.3 0.15 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+		
+		<a-entity
+			id="1c"  
+			position="-0.3 0 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1c; targets: #planetc"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1c; horizontalAlign: left"
 			position="1.3 0 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
+		
+		<a-entity
+			id="1d"  
+			position="-0.3 -0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1d; targets: #planetd"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1d; horizontalAlign: left"
+			position="1.3 -0.15 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+		
+		<a-entity
+			id="1e"  
+			position="-0.3 -0.3 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1e; targets: #planete"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1e; horizontalAlign: left"
+			position="1.3 -0.3 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+		
+		<a-entity
+			id="1f"  
+			position="-0.3 -0.45 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: yellow"
+			wire="on: click; emit: 1f; targets: #planetf"
+			sync sync-transform>
+		</a-entity>
+		<a-entity
+			n-text="fontSize: 2; text: Trappist 1f; horizontalAlign: left"
+			position="1.3 -0.45 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
+		<a-entity
+			id="fly"  
+			position="-0.3 -0.6 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: fly; target: #system"
+			sync sync-transform>
+		</a-entity>
+			<a-entity
+			n-text="fontSize: 2; text: Fly Away; horizontalAlign: left"
+			position="1.3 -0.6 0.02"
+			scale="0.3 0.3 0.3">
+		</a-entity>
+
     </a-entity>
 
     <!-- add planets -->
@@ -210,7 +271,7 @@
     </a-entity>
 	
 	<!-- planet animation -->
-	<a-entity id="planet" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+	<a-entity id="planetb" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
 		<a-animation attribute="scale" begin="1b" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1b" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>--
 		<a-sphere radius="5" material='src: #b;'>
@@ -223,7 +284,67 @@
 				position="0 -7 0.1">
 			</a-entity>
 		</a-entity>
-	</a-entity>	
+	</a-entity>
+	
+	<a-entity id="planetc" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+		<a-animation attribute="scale" begin="1c" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1c" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>--
+		<a-sphere radius="5" material='src: #c;'>
+			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+		</a-sphere>
+		<a-entity>
+			<a-plane color="black" width="5" height="3" opacity="0.4" position="0 -8 0"></a-plane>
+			<a-entity
+				n-text="fontSize: 4; text: Trappist 1c; horizontalAlign: middle"
+				position="0 -7 0.1">
+			</a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="planetd" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+		<a-animation attribute="scale" begin="1d" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1d" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>--
+		<a-sphere radius="5" material='src: #d;'>
+			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+		</a-sphere>
+		<a-entity>
+			<a-plane color="black" width="5" height="3" opacity="0.4" position="0 -8 0"></a-plane>
+			<a-entity
+				n-text="fontSize: 4; text: Trappist 1d; horizontalAlign: middle"
+				position="0 -7 0.1">
+			</a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+		<a-animation attribute="scale" begin="1e" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1e" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>--
+		<a-sphere radius="5" material='src: #e;'>
+			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+		</a-sphere>
+		<a-entity>
+			<a-plane color="black" width="5" height="3" opacity="0.4" position="0 -8 0"></a-plane>
+			<a-entity
+				n-text="fontSize: 4; text: Trappist 1e; horizontalAlign: middle"
+				position="0 -7 0.1">
+			</a-entity>
+		</a-entity>
+	</a-entity>
+	
+	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+		<a-animation attribute="scale" begin="1f" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1f" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>--
+		<a-sphere radius="5" material='src: #f;'>
+			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+		</a-sphere>
+		<a-entity>
+			<a-plane color="black" width="5" height="3" opacity="0.4" position="0 -8 0"></a-plane>
+			<a-entity
+				n-text="fontSize: 4; text: Trappist 1f; horizontalAlign: middle"
+				position="0 -7 0.1">
+			</a-entity>
+		</a-entity>
+	</a-entity>
 
 	<!-- intro -->
     <a-entity id="intro" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
