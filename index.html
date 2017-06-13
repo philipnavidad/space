@@ -117,7 +117,7 @@
     </a-entity>
 
     <!-- add planets -->
-    <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
+    <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync="own-on: system" sync-transform>
 		<a-animation attribute="scale" easing="linear" begin="system-on" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" easing="linear" begin="system-off" dur="1000" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
 	    
