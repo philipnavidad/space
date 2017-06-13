@@ -19,9 +19,9 @@
         <img id='f' src='resources/f-small.jpg'/>
         <img id='g' src='resources/g-small.jpg'/>
         <img id='h' src='resources/h-small.jpg'/>
-        <img id='mars1' src='resources/mars1.png'/>
-    	<img id='mars2' src='resources/mars2.png'/>
-    	<img id='trappist' src='resources/trappist.png'/>
+        <img id='marssky' src='resources/mars1.png'/>
+    	<img id='marssky' src='resources/mars2.png'/>
+    	<img id='trappistsky' src='resources/trappist.png'/>
     </a-assets>
 
     <!-- add cockpit controls -->
@@ -194,20 +194,20 @@
     </a-entity>
     
     <!-- add sky -->
-    <a-entity id="trappist360" scale="0.0001 0.0001 0.0001" sync="own-on: trappist" sync-transform>
-        <a-sky src="#trappist" radius="200"></a-sky>
+    <a-entity id="trappist360" scale="0.0001 0.0001 0.0001" sync sync-transform>
+        <a-sky src="#trappistsky" radius="200"></a-sky>
         <a-animation attribute="scale" easing="linear" begin="trappist360-on" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" easing="linear" begin="trappist360-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
     </a-entity>
     
-    <a-entity id="mars1" scale="0.0001 0.0001 0.0001" sync="own-on: mars1" sync-transform>
-        <a-sky src="#mars1" radius="200"></a-sky>
+    <a-entity id="mars1" scale="0.0001 0.0001 0.0001" sync sync-transform>
+        <a-sky src="#mars1sky" radius="200"></a-sky>
         <a-animation attribute="scale" easing="linear" begin="mars1-on" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
-        <a-animation attribute="scale" easing="linear" begin="mars-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
+        <a-animation attribute="scale" easing="linear" begin="mars2-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
     </a-entity>
     
-    <a-entity id="mars2" scale="0.0001 0.0001 0.0001" sync="own-on: trappist" sync-transform>
-        <a-sky src="#mars2" radius="200"></a-sky>
+    <a-entity id="mars2" scale="0.0001 0.0001 0.0001" sync sync-transform>
+        <a-sky src="#marssky" radius="200"></a-sky>
         <a-animation attribute="scale" easing="linear" begin="mars2-on" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" easing="linear" begin="mars2-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
     </a-entity>
