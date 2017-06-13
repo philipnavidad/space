@@ -23,7 +23,7 @@
     
 	<!-- add cockpit display -->
 	<a-entity 
-			position="0 -0.2 -0.2" 
+			position="0 -0.1 -0.2" 
 			rotation="-50 0 0" 
 		  	scale="0.05 0.05 0.05"
 			rotation="-45 0 0"
@@ -33,8 +33,8 @@
 	</a-entity>
 	
     <!-- add cockpit controls -->
-    <a-entity id="cockpit" position="0 0.2 -0.6" rotation="-30 0 0" n-cockpit-parent> 
-	<a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.001 0.001 0.001" fill="forwards" direction="alternate" repeat="0"></a-animation>
+    <a-entity id="cockpit" position="0 0.2 -0.6" rotation="-30 0 0" scale="0.0001 0.0001 0.0001" n-cockpit-parent> 
+	<a-animation attribute="scale" begin="cockpit" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		
 		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent></a-plane>
 		
@@ -48,7 +48,7 @@
 		</a-entity>
         <a-entity
 			id="1e"  
-			position="-0.1 0.15 0.02"
+			position="-0.05 0.15 0.02"
             scale="0.1 0.1 0.02"
             geometry="primitive: box" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -56,7 +56,7 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1e; horizontalAlign: left"
-			position="1.4 0.15 0.02"
+			position="1.5 0.15 0.02"
 			scale="0.3 0.3 0.3"
 		  	n-cockpit-parent>
 		</a-entity>
@@ -71,7 +71,7 @@
 		</a-entity>
         <a-entity
 			id="1f"  
-			position="-0.1 0 0.02"
+			position="-0.05 0 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -79,7 +79,7 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1f; horizontalAlign: left"
-			position="1.4 0 0.02"
+			position="1.5 0 0.02"
 			scale="0.3 0.3 0.3" 
 		  	n-cockpit-parent>
 		</a-entity>
@@ -94,7 +94,7 @@
 		</a-entity>
         <a-entity
 			id="1g"  
-			position="-0.1 -0.15 0.02"
+			position="-0.05 -0.15 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -102,7 +102,7 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1g; horizontalAlign: left"
-			position="1.4 -0.15 0.02"
+			position="1.5 -0.15 0.02"
 			scale="0.3 0.3 0.3"
 		  	n-cockpit-parent>
 		</a-entity>
