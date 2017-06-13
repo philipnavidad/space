@@ -19,7 +19,6 @@
         <img id='f' src='resources/f-small.jpg'/>
         <img id='g' src='resources/g-small.jpg'/>
         <img id='h' src='resources/h-small.jpg'/>
-        <img id='mars1sky' src='resources/mars1.png'/>
     	<img id='mars2sky' src='resources/mars2.png'/>
     	<img id='trappistsky' src='resources/trappist.png'/>
     </a-assets>
@@ -31,7 +30,7 @@
 
         <a-entity
             id="system-on"
-            position="-0.3 0.6 0.02"
+            position="-0.3 0.45 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
@@ -40,12 +39,12 @@
         </a-entity>
         <a-entity
             n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
-            position="1.3 0.6 0.02"
+            position="1.3 0.45 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
         <a-entity
             id="system-off"
-            position="0.3 0.6 0.02"
+            position="0.3 0.45 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
@@ -55,7 +54,7 @@
 
         <a-entity
             id="1e-on"
-            position="-0.3 0.45 0.02"
+            position="-0.3 0.3 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
@@ -64,12 +63,12 @@
         </a-entity>
         <a-entity
             n-text="fontSize: 2; text: Trappist 1e; horizontalAlign: left"
-            position="1.3 0.45 0.02"
+            position="1.3 0.3 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
         <a-entity
             id="1e-off"
-            position="0.3 0.45 0.02"
+            position="0.3 0.3 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
@@ -79,7 +78,7 @@
 
         <a-entity
             id="1f-on"
-            position="-0.3 0.3 0.02"
+            position="-0.3 0.15 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
@@ -88,12 +87,12 @@
         </a-entity>
         <a-entity
             n-text="fontSize: 2; text: Trappist 1f; horizontalAlign: left"
-            position="1.3 0.3 0.02"
+            position="1.3 0.15 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
         <a-entity
             id="1f-off"
-            position="0.3 0.3 0.02"
+            position="0.3 0.15 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
@@ -103,7 +102,7 @@
 
         <a-entity
             id="1g-on"
-            position="-0.3 0.15 0.02"
+            position="-0.3 0 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
@@ -112,12 +111,12 @@
         </a-entity>
         <a-entity
             n-text="fontSize: 2; text: Trappist 1g; horizontalAlign: left"
-            position="1.3 0.15 0.02"
+            position="1.3 0 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
         <a-entity
             id="1g-off"
-            position="0.3 0.15 0.02"
+            position="0.3 0 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
@@ -127,7 +126,7 @@
         
         <a-entity
             id="trappist360-on"
-            position="-0.3 0 0.02"
+            position="-0.3 -0.15 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
@@ -135,38 +134,16 @@
         </a-entity>
         <a-entity
             n-text="fontSize: 2; text: Trappist 360; horizontalAlign: left"
-            position="1.3 0 0.02"
-            scale="0.3 0.3 0.3">
-        </a-entity>
-        <a-entity
-            id="trappist360-off"
-            position="0.3 0 0.02"
-            scale="0.1 0.1 0.02"
-            rotation="0 0 0"
-            geometry="primitive: box" material="color: red"
-            wire="on: click; emit: trappist360-off; targets: #trappist360">
-        </a-entity>
-        
-        <a-entity
-            id="mars1-on"
-            position="-0.3 -0.15 0.02"
-            scale="0.1 0.1 0.02"
-            rotation="0 0 0"
-            geometry="primitive: box" material="color: green"
-            wire="on: click; emit: mars1-on; targets: #mars1">
-        </a-entity>
-        <a-entity
-            n-text="fontSize: 2; text: Mars1 360; horizontalAlign: left"
             position="1.3 -0.15 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
         <a-entity
-            id="mars1-off"
+            id="trappist360-off"
             position="0.3 -0.15 0.02"
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
-            wire="on: click; emit: mars1-off; targets: #mars1">
+            wire="on: click; emit: trappist360-off; targets: #trappist360">
         </a-entity>
         
         <a-entity
@@ -178,7 +155,7 @@
             wire="on: click; emit: mars2-on; targets: #mars2">
         </a-entity>
         <a-entity
-            n-text="fontSize: 2; text: Mars2 360; horizontalAlign: left"
+            n-text="fontSize: 2; text: Mars 360; horizontalAlign: left"
             position="1.3 -0.3 0.02"
             scale="0.3 0.3 0.3">
         </a-entity>
@@ -198,12 +175,6 @@
         <a-sky src="#trappistsky" radius="200"></a-sky>
         <a-animation attribute="scale" easing="linear" begin="trappist360-on" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" easing="linear" begin="trappist360-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
-    </a-entity>
-    
-    <a-entity id="mars1" scale="0.0001 0.0001 0.0001" sync sync-transform>
-        <a-sky src="#mars1sky" radius="200"></a-sky>
-        <a-animation attribute="scale" easing="linear" begin="mars1-on" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="normal" repeat="0"></a-animation>
-        <a-animation attribute="scale" easing="linear" begin="mars1-off" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001" fill="forwards" direction="normal" repeat="0"></a-animation>
     </a-entity>
     
     <a-entity id="mars2" scale="0.0001 0.0001 0.0001" sync sync-transform>
