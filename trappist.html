@@ -37,13 +37,13 @@
     <a-entity id="cockpit" position="0 0.2 -0.6" rotation="-30 0 0" scale="0.0001 0.0001 0.0001" n-cockpit-parent> 
 	<a-animation attribute="scale" begin="cockpit" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		
-		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent></a-plane>
+		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent altspace-cursor-collider="enabled: true></a-plane>
 		
 		<a-entity
 			id="1e"  
 			position="-0.2 0.15 0.02"
             scale="0.1 0.1 0.02"
-            geometry="primitive: box" material="color: green"
+            geometry="primitive: circle" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1e-on; targets: #planete">
 		</a-entity>
@@ -51,7 +51,7 @@
 			id="1e"  
 			position="-0.075 0.15 0.02"
             scale="0.1 0.1 0.02"
-            geometry="primitive: box" material="color: red"
+            geometry="primitive: circle" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1e-off; targets: #planete">
 		</a-entity>
@@ -66,7 +66,7 @@
 			id="1f"  
 			position="-0.2 0 0.02"
 			scale="0.1 0.1 0.02"
-			geometry="primitive: box" material="color: green"
+			geometry="primitive: circle" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1f-on; targets: #planetf">
 		</a-entity>
@@ -74,7 +74,7 @@
 			id="1f"  
 			position="-0.075 0 0.02"
 			scale="0.1 0.1 0.02"
-			geometry="primitive: box" material="color: red"
+			geometry="primitive: circle" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1f-off; targets: #planetf">
 		</a-entity>
@@ -89,7 +89,7 @@
 			id="1g"  
 			position="-0.2 -0.15 0.02"
 			scale="0.1 0.1 0.02"
-			geometry="primitive: box" material="color: green"
+			geometry="primitive: circle" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1g-on; targets: #planetg">
 		</a-entity>
@@ -97,7 +97,7 @@
 			id="1g"  
 			position="-0.075 -0.15 0.02"
 			scale="0.1 0.1 0.02"
-			geometry="primitive: box" material="color: red"
+			geometry="primitive: circle" material="color: red"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
 			wire="on: click; emit: 1g-off; targets: #planetg">
 		</a-entity>
