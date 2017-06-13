@@ -32,6 +32,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
+            wire__toggle="on: click; emit: system-toggle; target: #system"
             wire="on: click; emit: system-on; target: #system">
         </a-entity>
         <a-entity
@@ -45,6 +46,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
+            wire__toggle="on: click; emit: system-toggle; target: #system"
             wire="on: click; emit: system-off; target: #system">
         </a-entity>
 
@@ -54,6 +56,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
+            wire__toggle="on: click; emit: planete-toggle; target: #planete"
             wire="on: click; emit: 1e-on; targets: #planete">
         </a-entity>
         <a-entity
@@ -67,6 +70,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
+            wire__toggle="on: click; emit: planete-toggle; target: #planete"
             wire="on: click; emit: 1e-off; targets: #planete">
         </a-entity>
 
@@ -76,6 +80,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
+            wire__toggle="on: click; emit: planetf-toggle; target: #planetf"
             wire="on: click; emit: 1f-on; targets: #planetf">
         </a-entity>
         <a-entity
@@ -89,6 +94,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
+            wire__toggle="on: click; emit: planetf-toggle; target: #planetf"
             wire="on: click; emit: 1f-off; targets: #planetf">
         </a-entity>
 
@@ -98,6 +104,7 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: green"
+            wire__toggle="on: click; emit: planetg-toggle; target: #planetg"
             wire="on: click; emit: 1g-on; targets: #planetg">
         </a-entity>
         <a-entity
@@ -111,13 +118,14 @@
             scale="0.1 0.1 0.02"
             rotation="0 0 0"
             geometry="primitive: box" material="color: red"
+            wire__toggle="on: click; emit: planetg-toggle; target: #planetg"
             wire="on: click; emit: 1g-off; targets: #planetg">
         </a-entity>
 
     </a-entity>
 
     <!-- add planets -->
-    <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync="own-on: system" sync-transform>
+    <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync="own-on: system-toggle" sync-transform>
         <a-animation attribute="scale" easing="linear" begin="system-on" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" easing="linear" begin="system-off" dur="1000" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
 
@@ -218,7 +226,7 @@
     </a-entity>
 
     <!-- planet animation -->
-    <a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+    <a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync="own-on: planete-toggle" sync-transform>
         <a-animation attribute="scale" begin="1e-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="position" begin="1e-on" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" begin="1e-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
@@ -234,7 +242,7 @@
     </a-entity>
     </a-entity>
 
-    <a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+    <a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync="own-on: planetf-toggle" sync-transform>
     <a-animation attribute="scale" begin="1f-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
     <a-animation attribute="position" begin="1f-on" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="normal" repeat="0"></a-animation>
     <a-animation attribute="scale" begin="1f-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
@@ -250,7 +258,7 @@
     </a-entity>
     </a-entity>
 
-    <a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+    <a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5" sync="own-on: planetg-toggle" sync-transform>
         <a-animation attribute="scale" begin="1g-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="position" begin="1g-on" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="normal" repeat="0"></a-animation>
         <a-animation attribute="scale" begin="1g-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
