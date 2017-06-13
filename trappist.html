@@ -21,9 +21,21 @@
         <img id='h' src='resources/h-small.jpg'/>
     </a-assets>
     
-    <!-- add cockpit controls -->
-    <a-entity position="0.8 -0.2 -0.6" rotation="-50 0 0" n-cockpit-parent> 
+	<!-- add cockpit display -->
+	<a-entity 
+			position="0.8 -0.8 -0.6" 
+			rotation="-50 0 0" 
+		  	scale="0.05 0.05 0.05"
+			rotation="-45 0 0"
+			geometry="primitive: circle" material="color: green"
+			n-cockpit-parent altspace-cursor-collider="enabled: true"
+			wire="on: click; emit: cockpit; target: #cockpit">
+	</a-entity>
 	
+    <!-- add cockpit controls -->
+    <a-entity id="cockpit" position="0.8 -0.2 -0.6" rotation="-50 0 0" n-cockpit-parent> 
+	<a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.001 0.001 0.001" fill="forwards" direction="alternate" repeat="0"></a-animation>
+		
 		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent></a-plane>
 		
 		<a-entity
