@@ -24,7 +24,7 @@
     <!-- add cockpit controls -->
     <a-entity position="3 4 10"> 
 	
-		<a-plane color="white" width="1" height="1.3" opacity="0.05"></a-plane>
+		<a-plane color="white" width="1" height="1" opacity="0.05"></a-plane>
 		
 		<a-entity
 			id="system-on"  
@@ -119,8 +119,9 @@
     <!-- add planets -->
     <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
 		<a-animation attribute="scale" easing="linear" begin="system-on" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
-		
-        <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0'>
+		<a-animation attribute="scale" easing="linear" begin="system-off" dur="1000" from="1 1 1" to="0.0001 0.0001 0.0001" direction="alternate" repeat="0"></a-animation>
+        
+		<a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0'>
             <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
         </a-entity>
 
@@ -220,6 +221,9 @@
 	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
 		<a-animation attribute="scale" begin="1e-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1e-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1e-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1e-off" dur="1000" from="0 10 -5" to="0 0 -5" direction="alternate" repeat="0"></a-animation>
+		
 		<a-sphere radius="5" material='src: #e;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -233,6 +237,9 @@
 	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
     <a-animation attribute="scale" begin="1f-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
     <a-animation attribute="position" begin="1f-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+	<a-animation attribute="scale" begin="1f-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" direction="alternate" repeat="0"></a-animation>
+    <a-animation attribute="position" begin="1f-off" dur="1000" from="0 10 -5" to="0 0 -5" direction="alternate" repeat="0"></a-animation>
+		
 		<a-sphere radius="5" material='src: #f;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -246,6 +253,9 @@
 	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
 		<a-animation attribute="scale" begin="1g-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1g-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1g-off" dur="1000" from="1 1 1" to="0.001 0.001 0.001" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1g-off" dur="1000" from="0 10 -5" to="0 0 -5" direction="alternate" repeat="0"></a-animation>
+		
 		<a-sphere radius="5" material='src: #g;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
