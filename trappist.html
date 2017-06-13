@@ -7,7 +7,7 @@
 
 <body>
 <!-- set up the scene -->
-<a-scene altspace="fullspace: true" sync-system="author: phil; app: mach-1; refUrl: https://mach1-d4c9c.firebaseio.com/">
+<a-scene altspace="fullspace: true">
 
     <!-- preload all our textures -->
     <a-assets>
@@ -169,7 +169,7 @@
     </a-entity>
 	
 	<!-- planet animation -->
-	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5">
 		<a-animation attribute="scale" begin="1e" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1e" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
 	
@@ -183,7 +183,7 @@
     </a-entity>
 	</a-entity>
 	
-	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5">
     <a-animation attribute="scale" begin="1f" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
     <a-animation attribute="position" begin="1f" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
 	
@@ -197,7 +197,7 @@
     </a-entity>
 	</a-entity>
   
-	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
+	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5">
 		<a-animation attribute="scale" begin="1g" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1g" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
 		
