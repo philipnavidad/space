@@ -27,66 +27,98 @@
 		<a-plane color="white" width="1" height="1.3" opacity="0.05"></a-plane>
 		
 		<a-entity
-			id="toggle"  
+			id="system-on"  
 			position="-0.3 0.3 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
 			geometry="primitive: box" material="color: green"
-			wire="on: click; emit: toggle; target: #system">
+			wire="on: click; emit: system-on; target: #system">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Toggle; horizontalAlign: left"
 			position="1.3 0.3 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
+	    <a-entity
+			id="system-off"  
+			position="0.3 0.3 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: system-off; target: #system">
+		</a-entity>	
 		
 		<a-entity
-			id="1e"  
+			id="1e-on"  
 			position="-0.3 0.15 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
-			geometry="primitive: box" material="color: yellow"
-			wire="on: click; emit: 1e; targets: #planete">
+			geometry="primitive: box" material="color: green"
+			wire="on: click; emit: 1e-on; targets: #planete">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist 1e; horizontalAlign: left"
 			position="1.3 0.15 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
+		<a-entity
+			id="1e-off"  
+			position="0.3 0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: 1e-off; targets: #planete">
+		</a-entity>
 		
 		<a-entity
-			id="1f"  
+			id="1f-on"  
 			position="-0.3 0 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
-			geometry="primitive: box" material="color: yellow"
-			wire="on: click; emit: 1f; targets: #planetf">
+			geometry="primitive: box" material="color: green"
+			wire="on: click; emit: 1f-on; targets: #planetf">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist 1f; horizontalAlign: left"
 			position="1.3 0 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
+		<a-entity
+			id="1f-off"  
+			position="0.3 0 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: 1f-off; targets: #planetf">
+		</a-entity>
         
         <a-entity
-			id="1g"  
+			id="1g-on"  
 			position="-0.3 -0.15 0.02"
 			scale="0.1 0.1 0.02"
 			rotation="0 0 0"
-			geometry="primitive: box" material="color: yellow"
-			wire="on: click; emit: 1g; targets: #planetg">
+			geometry="primitive: box" material="color: green"
+			wire="on: click; emit: 1g-on; targets: #planetg">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist 1g; horizontalAlign: left"
 			position="1.3 -0.15 0.02"
 			scale="0.3 0.3 0.3">
 		</a-entity>
+		<a-entity
+			id="1g-off"  
+			position="0.3 -0.15 0.02"
+			scale="0.1 0.1 0.02"
+			rotation="0 0 0"
+			geometry="primitive: box" material="color: red"
+			wire="on: click; emit: 1g-off; targets: #planetg">
+		</a-entity>
 
     </a-entity>
 
     <!-- add planets -->
     <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
-		<a-animation attribute="scale" easing="linear" begin="toggle" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" easing="linear" begin="system-on" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
 		
         <a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0'>
             <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
@@ -186,8 +218,8 @@
 	
 	<!-- planet animation -->
 	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
-		<a-animation attribute="scale" begin="1e" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="position" begin="1e" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1e-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1e-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
 		<a-sphere radius="5" material='src: #e;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -199,8 +231,8 @@
 	</a-entity>
 	
 	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
-    <a-animation attribute="scale" begin="1f" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
-    <a-animation attribute="position" begin="1f" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+    <a-animation attribute="scale" begin="1f-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+    <a-animation attribute="position" begin="1f-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
 		<a-sphere radius="5" material='src: #f;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -212,8 +244,8 @@
 	</a-entity>
   
 	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5" sync sync-transform>
-		<a-animation attribute="scale" begin="1g" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="position" begin="1g" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1g-on" dur="1000" from="0.001 0.001 0.001" to="1 1 1" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="position" begin="1g-on" dur="1000" from="0 0 -5" to="0 10 -5" direction="alternate" repeat="0"></a-animation>
 		<a-sphere radius="5" material='src: #g;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
