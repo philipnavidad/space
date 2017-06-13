@@ -24,11 +24,11 @@
     <!-- add cockpit controls -->
     <a-entity position="0.8 -0.2 -0.6" rotation="-50 0 0" n-cockpit-parent> 
 	
-		<a-plane color="black" width="0.5" height="0.5" opacity="0.3" n-cockpit-parent></a-plane>
+		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent></a-plane>
 		
 		<a-entity
 			id="1e"  
-			position="-0.3 0.15 0.02"
+			position="-0.2 0.15 0.02"
             scale="0.1 0.1 0.02"
             geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -36,14 +36,14 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1e; horizontalAlign: left"
-			position="1.3 0.15 0.02"
+			position="1.4 0.15 0.02"
 			scale="0.3 0.3 0.3"
 		  	n-cockpit-parent>
 		</a-entity>
 		
 		<a-entity
 			id="1f"  
-			position="-0.3 0 0.02"
+			position="-0.2 0 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -51,14 +51,14 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1f; horizontalAlign: left"
-			position="1.3 0 0.02"
+			position="1.4 0 0.02"
 			scale="0.3 0.3 0.3" 
 		  	n-cockpit-parent>
 		</a-entity>
         
         <a-entity
 			id="1g"  
-			position="-0.3 -0.15 0.02"
+			position="-0.2 -0.15 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
@@ -66,7 +66,7 @@
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1g; horizontalAlign: left"
-			position="1.3 -0.15 0.02"
+			position="1.4 -0.15 0.02"
 			scale="0.3 0.3 0.3"
 		  	n-cockpit-parent>
 		</a-entity>
@@ -175,7 +175,10 @@
 	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5">
 		<a-animation attribute="scale" begin="1e" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1e" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
-	
+		<a-animation attribute="scale" begin="1f" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1g" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		
+		
 		<a-sphere radius="5" material='src: #e;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -189,7 +192,10 @@
 	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5">
     <a-animation attribute="scale" begin="1f" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
     <a-animation attribute="position" begin="1f" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
+	<a-animation attribute="scale" begin="1e" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
+	<a-animation attribute="scale" begin="1g" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
 	
+		
 		<a-sphere radius="5" material='src: #f;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
@@ -203,6 +209,8 @@
 	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5">
 		<a-animation attribute="scale" begin="1g" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
 		<a-animation attribute="position" begin="1g" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1f" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
+		<a-animation attribute="scale" begin="1e" dur="1" to="0.001 0.001 0.001" fill="forwards" direction="normal" repeat="0"></a-animation>
 		
 		<a-sphere radius="5" material='src: #g;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
