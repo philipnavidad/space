@@ -3,11 +3,42 @@
 <head>
 <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+<script>
+		AFRAME.registerSystem('present-planet', {
+			init: function()
+			{
+				this.presentedPlanet = '';
+				var self = this;
+				this.el.addEventListener('select', function(e){
+					var selectedId = e.detail.id;
+					if(selectedId !== self.presentedPlanet){
+						self.el.querySelector('.planet#'+selectedId).emit('show');
+						self.el.querySelector('.planet:not(#'+selectedId+')').emit('hide');
+						self.presentedPlanet = selectedId;
+					}
+					else {
+						self.el.querySelector('.planet').emit('hide');
+						self.presentedPlanet = '';
+					}
+				});
+			}
+		});
+
+		AFRAME.registerComponent('select-planet', {
+			schema: {type: 'string'},
+			init: function(){
+				var self = this;
+				this.el.addEventListener('click', function(){
+					self.el.sceneEl.emit('select', {id: self.data});
+				});
+			}
+		});
+</script>
 </head>
 
 <body>
 <!-- set up the scene -->
-<a-scene altspace="fullspace: true">
+<a-scene present-planet altspace="fullspace: true">
 
     <!-- preload all our textures -->
     <a-assets>
@@ -23,7 +54,7 @@
     
 	<!-- add cockpit display -->
 	<a-entity 
-			position="0.8 -0.5 -0.2" 
+			position="0 0.7 -0.2" 
 			rotation="-50 0 0" 
 		  	scale="0.05 0.05 0.05"
 			rotation="-45 0 0"
@@ -33,18 +64,18 @@
 	</a-entity>
 	
     <!-- add cockpit controls -->
-    <a-entity id="cockpit" position="0.8 -0.2 -0.6" rotation="-50 0 0" n-cockpit-parent> 
+    <a-entity id="cockpit" position="0 -0.2 -0.6" rotation="-30 0 0" n-cockpit-parent> 
 	<a-animation attribute="scale" begin="cockpit" dur="1" from="1 1 1" to="0.001 0.001 0.001" fill="forwards" direction="alternate" repeat="0"></a-animation>
 		
 		<a-plane color="black" width="0.6" height="0.6" opacity="0.3" n-cockpit-parent></a-plane>
 		
 		<a-entity
-			id="1e"  
+			id="button1e"  
 			position="-0.2 0.15 0.02"
             scale="0.1 0.1 0.02"
             geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-			wire="on: click; emit: 1e; targets: #planete, #planetf, #planetg">
+			select-planet="1e">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1e; horizontalAlign: left"
@@ -54,12 +85,12 @@
 		</a-entity>
 		
 		<a-entity
-			id="1f"  
+			id="button1f"  
 			position="-0.2 0 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-			wire="on: click; emit: 1f; targets: #planete, #planetf, #planetg">
+			select-planet="1f">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1f; horizontalAlign: left"
@@ -69,12 +100,12 @@
 		</a-entity>
         
         <a-entity
-			id="1g"  
+			id="button1g"  
 			position="-0.2 -0.15 0.02"
 			scale="0.1 0.1 0.02"
 			geometry="primitive: box" material="color: green"
             n-cockpit-parent altspace-cursor-collider="enabled: true"
-			wire="on: click; emit: 1g; targets: #planete, #planetf, #planetg">
+			select-planet="1g">
 		</a-entity>
 		<a-entity
 			n-text="fontSize: 2; text: Trappist-1g; horizontalAlign: left"
@@ -184,55 +215,48 @@
     </a-entity>
 	
 	<!-- planet animation -->
-	<a-entity id="planete" scale="0.001 0.001 0.001" position="0 0 -5">
-		<a-animation attribute="scale" begin="1e" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="position" begin="1e" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="1f" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="1g" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-		
-		
+	<a-entity class='planet' id='1e' scale="0.001 0.001 0.001" position="0 0 -5">
+		<a-animation begin='show' attribute='position' dur="1000" from="0 0 -5" to="0 10 -5"></a-animation>
+		<a-animation begin='show' attribute='scale' dur="1000" from="0.001 0.001 0.001" to="1 1 1"></a-animation>
+		<a-animation begin='hide' attribute='scale' dur="1" to="0.001 0.001 0.001"></a-animation>
 		<a-sphere radius="5" material='src: #e;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
-    <a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
-    <a-entity
-        n-text="fontSize: 5; text: TRAPPIST-1E; horizontalAlign: middle"
-        position="0 -8 0.1">
-    </a-entity>
+    	<a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
+    	<a-entity
+        	n-text="fontSize: 5; text: TRAPPIST-1E; horizontalAlign: middle"
+        	position="0 -8 0.1">
+    	</a-entity>
 	</a-entity>
 	
-	<a-entity id="planetf" scale="0.001 0.001 0.001" position="0 0 -5">
-    <a-animation attribute="scale" begin="1f" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
-    <a-animation attribute="position" begin="1f" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
-	<a-animation attribute="scale" begin="1e" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-	<a-animation attribute="scale" begin="1g" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-	
-		
+	<a-entity class='planet' id='1f' scale="0.001 0.001 0.001" position="0 0 -5">
+		<a-animation begin='show' attribute='position' dur="1000" from="0 0 -5" to="0 10 -5"></a-animation>
+		<a-animation begin='show' attribute='scale' dur="1000" from="0.001 0.001 0.001" to="1 1 1"></a-animation>
+		<a-animation begin='hide' attribute='scale' dur="1" to="0.001 0.001 0.001"></a-animation>
 		<a-sphere radius="5" material='src: #f;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
-    <a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
-    <a-entity
-            n-text="fontSize: 5; text: TRAPPIST-1F; horizontalAlign: middle"
-            position="0 -8 0.1">
-    </a-entity>
+    	<a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
+    	<a-entity
+        	n-text="fontSize: 5; text: TRAPPIST-1F; horizontalAlign: middle"
+        	position="0 -8 0.1">
+    	</a-entity>
 	</a-entity>
-  
-	<a-entity id="planetg" scale="0.001 0.001 0.001" position="0 0 -5">
-		<a-animation attribute="scale" begin="1g" dur="1000" from="0.001 0.001 0.001" to="1 1 1" fill="both" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="position" begin="1g" dur="1000" from="0 0 -5" to="0 10 -5" fill="both" direction="alternate" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="1f" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-		<a-animation attribute="scale" begin="1e" dur="1" to="0.001 0.001 0.001" fill="both" direction="normal" repeat="0"></a-animation>
-		
+	
+	<a-entity class='planet' id='1g' scale="0.001 0.001 0.001" position="0 0 -5">
+		<a-animation begin='show' attribute='position' dur="1000" from="0 0 -5" to="0 10 -5"></a-animation>
+		<a-animation begin='show' attribute='scale' dur="1000" from="0.001 0.001 0.001" to="1 1 1"></a-animation>
+		<a-animation begin='hide' attribute='scale' dur="1" to="0.001 0.001 0.001"></a-animation>
 		<a-sphere radius="5" material='src: #g;'>
 			<a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
 		</a-sphere>
-    <a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
-    <a-entity
-            n-text="fontSize: 5; text: TRAPPIST-1G; horizontalAlign: middle"
-            position="0 -8 0.1">
-    </a-entity>
-	</a-entity>  
+    	<a-plane color="black" width="4" height="2" opacity="0.4" position="0 -8 0"></a-plane>
+    	<a-entity
+        	n-text="fontSize: 5; text: TRAPPIST-1G; horizontalAlign: middle"
+        	position="0 -8 0.1">
+    	</a-entity>
+	</a-entity>
+	
 </a-scene>
 </body>
 </html>
