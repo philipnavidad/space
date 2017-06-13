@@ -117,11 +117,10 @@
     </a-entity>
 
     <!-- add planets -->
-    <a-entity id="system" position="200 200 -200" scale="1 1 1" sync sync-transform>
+    <a-entity id="system" position="200 200 -200" scale="0.0001 0.0001 0.0001" sync sync-transform>
 		<a-animation attribute="scale" easing="linear" begin="system" dur="1000" from="0.0001 0.0001 0.0001" to="1 1 1" fill="both" direction="normal" repeat="0"></a-animation>
 		<a-animation attribute="scale" easing="linear" begin="system-off" dur="1000" from="1 1 1" to="0.0001 0.0001 0.0001" fill="both" direction="normal" repeat="0"></a-animation>
-        	<a-animation attribute="visible" begin="system-on" dur="1000" to="true" direction="alternate" repeat="0"></a-animation>
-        
+	    
 		<a-entity id="sun" geometry="primitive: sphere; radius: 50" material="src: #sun" position='0 0 0'>
             <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
         </a-entity>
